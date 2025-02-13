@@ -1,24 +1,20 @@
 {
-  "publisher": "antfu",
-  "name": "ext-name",
-  "displayName": "ext-name",
+  "publisher": "warmthsea",
+  "name": "open-terminal-host",
+  "displayName": "open-terminal-host",
   "version": "0.0.0",
   "private": true,
   "packageManager": "pnpm@9.7.1",
   "description": "",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "author": "warmthsea <2586244885@qq.com>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/antfu/ext-name#readme",
+  "homepage": "https://github.com/warmthsea/open-terminal-host#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/antfu/ext-name"
+    "url": "https://github.com/warmthsea/open-terminal-host"
   },
   "bugs": {
-    "url": "https://github.com/antfu/ext-name/issues"
-  },
-  "sponsor": {
-    "url": "https://github.com/sponsors/antfu"
+    "url": "https://github.com/warmthsea/open-terminal-host/issues"
   },
   "categories": [
     "Other"
@@ -37,11 +33,23 @@
     "onStartupFinished"
   ],
   "contributes": {
-    "commands": [],
+    "commands": [
+      {
+        "command": "OpenTerminalHost.openProject",
+        "title": "Open Terminal Host",
+        "category": "Open Terminal"
+      }
+    ],
     "configuration": {
       "type": "object",
-      "title": "ext-name",
-      "properties": {}
+      "title": "Open Terminal Host - Configuration",
+      "properties": {
+        "openTerminalHost.script": {
+          "description": "openTerminalHost.script",
+          "type": "string",
+          "default": "npm run dev"
+        }
+      }
     }
   },
   "scripts": {

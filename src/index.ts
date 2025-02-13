@@ -1,8 +1,52 @@
-import { defineExtension } from 'reactive-vscode'
-import { window } from 'vscode'
+import type { ChildProcess } from 'node:child_process'
+import { exec, spawn } from 'node:child_process'
+import type { ExtensionContext } from 'vscode'
+import { StatusBarAlignment, Uri, commands, env, window, workspace } from 'vscode'
+import { config } from './config'
 
-const { activate, deactivate } = defineExtension(() => {
-  window.showInformationMessage('Hello')
-})
+const workspaceFolders = workspace.workspaceFolders
+const cwd = workspaceFolders ? workspaceFolders[0].uri.fsPath : undefined
 
-export { activate, deactivate }
+function getTerminalsInfo() {
+  const terminals = window.terminals
+  const terminalInfo = terminals.map((terminal) => {
+    return {
+      name: terminal.name,
+      processId: terminal.processId,
+      creationOptions: terminal.creationOptions,
+    }
+  })
+  return terminalInfo
+}
+
+function runDev() {
+  const viteTerminal = window.createTerminal('Vite Terminal')
+  viteTerminal.sendText('npm run dev')
+  viteTerminal.show()
+}
+
+export function activate(context: ExtensionContext) {
+  const statusBar = window.createStatusBarItem(StatusBarAlignment.Left, 2)
+  statusBar.command = 'OpenTerminalHost.openProject'
+  statusBar.text = '$(inspect)'
+  statusBar.tooltip = 'Open Server'
+  statusBar.show()
+
+  const openProjectCommand = commands.registerCommand('OpenTerminalHost.openProject', () => {
+    // env.openExternal(Uri.parse(url))
+    const terminal = getTerminalsInfo()
+    if (!terminal.length) {
+      runDev()
+    }
+    else {
+      const terminals = window.terminals
+      terminals.forEach(terminal => terminal.dispose())
+      runDev()
+    }
+  })
+
+  context.subscriptions.push(openProjectCommand)
+}
+
+export function deactivate() {
+}
