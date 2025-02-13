@@ -25,7 +25,7 @@ function runDev() {
 }
 
 export function activate(context: ExtensionContext) {
-  const statusBar = window.createStatusBarItem(StatusBarAlignment.Left, 2)
+  const statusBar = window.createStatusBarItem(StatusBarAlignment.Left, 0)
   statusBar.command = 'OpenTerminalHost.openProject'
   statusBar.text = '$(inspect)'
   statusBar.tooltip = 'Open Server'
