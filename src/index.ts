@@ -1,5 +1,6 @@
 import type { ExtensionContext } from 'vscode'
 import { StatusBarAlignment, commands, window } from 'vscode'
+import { config } from './config'
 
 // import { StatusBarAlignment, Uri, commands, env, window, workspace } from 'vscode'
 // const workspaceFolders = workspace.workspaceFolders
@@ -18,9 +19,9 @@ function getTerminalsInfo() {
 }
 
 function runDev() {
-  const viteTerminal = window.createTerminal('Vite Terminal')
-  viteTerminal.sendText('npm run dev')
-  viteTerminal.show()
+  const userTerminal = window.createTerminal('Terminal')
+  userTerminal.sendText(config.script)
+  userTerminal.show()
 }
 
 export function activate(context: ExtensionContext) {
