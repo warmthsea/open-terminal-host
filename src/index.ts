@@ -1,11 +1,9 @@
-import type { ChildProcess } from 'node:child_process'
-import { exec, spawn } from 'node:child_process'
 import type { ExtensionContext } from 'vscode'
-import { StatusBarAlignment, Uri, commands, env, window, workspace } from 'vscode'
-import { config } from './config'
+import { StatusBarAlignment, commands, window } from 'vscode'
 
-const workspaceFolders = workspace.workspaceFolders
-const cwd = workspaceFolders ? workspaceFolders[0].uri.fsPath : undefined
+// import { StatusBarAlignment, Uri, commands, env, window, workspace } from 'vscode'
+// const workspaceFolders = workspace.workspaceFolders
+// const cwd = workspaceFolders ? workspaceFolders[0].uri.fsPath : undefined
 
 function getTerminalsInfo() {
   const terminals = window.terminals
