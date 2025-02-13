@@ -6,12 +6,12 @@
 
 <a href="https://marketplace.visualstudio.com/items?itemName=warmthsea.open-terminal-host" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/warmthsea.open-terminal-host.svg?color=eee&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
 
+![screenshots](https://github.com/user-attachments/assets/58c0b3b1-d8e3-48a9-811b-e50216bc5818)
+
+
 ## Download
 
 [marketplace.visualstudio/open-terminal-host](https://marketplace.visualstudio.com/items?itemName=warmthsea.open-terminal-host)
-
-![screenshots](https://github.com/user-attachments/assets/68c1331c-dd5e-4252-bb27-a0e8e61a3337)
-
 
 ## Getting started
 
