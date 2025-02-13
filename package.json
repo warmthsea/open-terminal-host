@@ -2,7 +2,7 @@
   "publisher": "warmthsea",
   "name": "open-terminal-host",
   "displayName": "Open Terminal Host",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "packageManager": "pnpm@9.7.1",
   "description": "",
