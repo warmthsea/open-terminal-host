@@ -10,6 +10,9 @@
 
 [marketplace.visualstudio/open-terminal-host](https://marketplace.visualstudio.com/items?itemName=warmthsea.open-terminal-host)
 
+![screenshots](https://github.com/user-attachments/assets/68c1331c-dd5e-4252-bb27-a0e8e61a3337)
+
+
 ## Getting started
 
 ### `.vscode/settings.json`
